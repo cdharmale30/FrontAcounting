@@ -51,7 +51,7 @@ public class HomePage extends TestBase {
 		return new FixedAssetLinkPage();
 	}
 
-	public SalesTypesPage clickOnContactsLink(){
+	public SalesTypesPage clickOnSalesTypesPage(){
 		salesTypesLink.click();
 		return new SalesTypesPage();
 	}

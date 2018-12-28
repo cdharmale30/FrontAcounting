@@ -6,11 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 
 import com.test.testbase.TestBase;
-import com.test.testutils.CustomListener;
-@Listeners(CustomListener.class)
+
 public class SalesTypesPage extends TestBase {
 
 	
@@ -40,19 +38,17 @@ public class SalesTypesPage extends TestBase {
 
 	}
 
-	public void enterSalesTypeName() {
-		salesTypeText.sendKeys("Retail");
-	}
-	public SalesTypesPage loginPageData(String salesTypes,String calculationfactors ) throws IOException
+	public SalesTypesPage salesTypeData(String salestype,String cfactor ) throws IOException
 	{
-		salesTypeName.sendKeys(salesTypes);
-		calculationFactor.sendKeys(calculationfactors);
+		salesTypeName.sendKeys(salestype);
+		calculationFactor.sendKeys(cfactor);
 		chekBoxSalestype.click();
 		btnAddNew.click();
 		
 		return new SalesTypesPage();
 		
 	}
+
 	
 	
 

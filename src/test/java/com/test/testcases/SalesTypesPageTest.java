@@ -26,6 +26,7 @@ public class SalesTypesPageTest extends TestBase {
 	TestUtils testUtils;
 	SalesTypesPage salesTypesPage;
 	ExcelDataRead exceldataRead;
+
 	public SalesTypesPageTest() {
 		super();
 	}
@@ -37,26 +38,22 @@ public class SalesTypesPageTest extends TestBase {
 		loginPage = new LoginPage();
 		salesTypesPage = new SalesTypesPage();
 		homePage = loginPage.loginPageData(prop.getProperty("username"), prop.getProperty("password"));
-		salesTypesPage = homePage.clickOnContactsLink();
+		salesTypesPage = homePage.clickOnSalesTypesPage();
 	}
 
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown() throws InterruptedException {
 		driver.quit();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void verifySalesTypesTittle() {
 		String salesTypesPageText = salesTypesPage.checkSalesTypePageTitle();
-		Assert.assertEquals(salesTypesPageText, "Sals Types");
+		Assert.assertEquals(salesTypesPageText, "Sales Types");
 
 	}
-	@Test
-	public void verifySalesTypeName() {
-		
-	
-	}
-	
+
+
 	@DataProvider(name="loginData")
 	public Object[][] loginDataProvider() throws Exception
 	{
@@ -65,17 +62,14 @@ public class SalesTypesPageTest extends TestBase {
 		return data;
 		
 	}
+	
 	@Test(priority=2,dataProvider="loginData")
-	public void LoginPageDataTest(String username,String password ) 
+	public void salesTypesPageData(String sale,String factor ) throws IOException
 	{
 					
-		try {
-			salesTypesPage.loginPageData(username, password);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		salesTypesPage.salesTypeData(sale, factor);
 		
 	}
+
 
 }
