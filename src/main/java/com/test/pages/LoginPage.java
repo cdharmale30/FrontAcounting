@@ -17,7 +17,7 @@ import com.test.testbase.TestBase;
 public class LoginPage extends TestBase {
 	@FindBy(xpath = "//img[@src='./themes/default/images/logo_frontaccounting.png']")
 	@CacheLookup
-	WebElement freeAccountingLogo;
+	 WebElement freeAccountingLogo;
 
 	@FindBy(name = "user_name_entry_field")
 	WebElement et_username;
@@ -43,8 +43,9 @@ public class LoginPage extends TestBase {
 		return driver.getTitle();
 	}
 
-	public String dropDown() {
+	public String loginDropDown() {
 		Select project = new Select(driver.findElement(By.name("company_login_name")));
+		
 		project.selectByVisibleText("FrontAccounting");
 		return driver.getTitle();
 	}

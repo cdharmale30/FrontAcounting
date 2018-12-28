@@ -6,15 +6,13 @@
   </listeners>
   <test thread-count="5" name="Front Accounting TestCases(failed)">
     <classes>
-      <class name="com.test.testcases.LoginPageTest">
+      <class name="com.test.testcases.SalesTypesPageTest">
         <methods>
-          <include name="frontAccountinglogotest"/>
           <include name="tearDown"/>
-          <include name="dropDownTest"/>
-          <include name="setup"/>
-          <include name="loginPageDataTest"/>
+          <include name="verifySalesTypesTittle"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.test.testcases.LoginPageTest -->
+      </class> <!-- com.test.testcases.SalesTypesPageTest -->
     </classes>
   </test> <!-- Front Accounting TestCases(failed) -->
 </suite> <!-- Failed suite [FrontAccounting] -->

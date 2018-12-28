@@ -53,6 +53,7 @@ public class TestBase {
 
 		}
 */
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtils.IMPLICITLY_WAIT_TIMEOUT, TimeUnit.SECONDS);

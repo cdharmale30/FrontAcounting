@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="FrontAccounting">
-<listeners>
-		<listener class-name="com.test.extentreport.ExtentReportTestNG"></listener>
+	<listeners>
+		<listener
+			class-name="com.test.extentreport.ExtentReportTestNG"></listener>
+			 <listener class-name="com.test.testutils.CustomListener"></listener>
 	</listeners>
-  <test  name="Front Accounting TestCases">
-  
-  <classes>
+	<test name="Front Accounting TestCases">
+
+		<classes>
 			<class name="com.test.testcases.LoginPageTest"></class>
-			
+			<class name="com.test.testcases.HomePageTest"></class>
+			<class name="com.test.testcases.SalesTypesPageTest"></class>
+
 		</classes>
-  
-  </test> <!-- Front Accounting TestCases -->
+
+	</test> <!-- Front Accounting TestCases -->
 </suite> <!-- FrontAccounting -->

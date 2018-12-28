@@ -1,13 +1,19 @@
 package com.test.testutils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class TestUtils {
@@ -18,7 +24,9 @@ public class TestUtils {
 
 	static Workbook book;
 	static Sheet sheet;
-	
+	static WebDriver driver;
+
+	// ---------------Xl Sheet read--------------------
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
@@ -46,5 +54,14 @@ public class TestUtils {
 		return data;
 	}
 
+	// ---------------Xl Sheet read--------------------
+
+	// --------------Screen shot Code--------------------
+	public  void failed() throws IOException {
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		 FileUtils.copyFile(screenshotFile, new File("I:\\All eclipse Code7\\FrontAccounting\\screenshot\\"+"failed_"+this.getClass().getName()+"_"+".jpg"));
+	}
+	
+	// --------------Screen shot Code--------------------
 
 }

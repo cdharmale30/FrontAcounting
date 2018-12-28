@@ -32,11 +32,8 @@ public class LoginPageTest extends TestBase {
 	@BeforeMethod
 	public void setup() {
 		initialization();
-
 		testUtils = new TestUtils();
-
 		loginPage = new LoginPage();
-
 	}
 
 	@Test(priority = 1)
@@ -74,7 +71,7 @@ public class LoginPageTest extends TestBase {
 
 	@Test(priority = 3)
 	public void dropDownTest() {
-		loginPage.dropDown();
+		loginPage.loginDropDown();
 		logger.info("click on drowpdown page on login");
 
 	}
