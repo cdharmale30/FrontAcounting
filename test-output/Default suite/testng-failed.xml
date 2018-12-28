@@ -5,8 +5,8 @@
     <classes>
       <class name="com.test.testcases.SalesTypesPageTest">
         <methods>
+          <include name="LoginPageDataTest"/>
           <include name="tearDown"/>
-          <include name="verifySalesTypesTittle"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.test.testcases.SalesTypesPageTest -->
