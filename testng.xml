@@ -4,7 +4,7 @@
 	<listeners>
 		<listener
 			class-name="com.test.extentreport.ExtentReportTestNG"></listener>
-			 <listener class-name="com.test.testutils.CustomListener"></listener>
+		<listener class-name="com.test.testutils.CustomListener"></listener>
 	</listeners>
 	<test name="Front Accounting TestCases">
 
@@ -12,8 +12,7 @@
 			<class name="com.test.testcases.LoginPageTest"></class>
 			<class name="com.test.testcases.HomePageTest"></class>
 			<class name="com.test.testcases.SalesTypesPageTest"></class>
-
+			<class name="com.test.testcases.SalesPersonsPageTest"></class>
 		</classes>
-
 	</test> <!-- Front Accounting TestCases -->
 </suite> <!-- FrontAccounting -->

@@ -22,6 +22,9 @@ public class HomePage extends TestBase {
 	
 	@FindBy(xpath = "//a[contains(text(),'Sales T')]")
 	WebElement salesTypesLink;
+	
+	@FindBy(xpath="//a[@href='./sales/manage/sales_people.php?']")
+	WebElement salesPersonsLink;
 
 	public HomePage() {
 		PageFactory.initElements(driver, this);
@@ -54,5 +57,10 @@ public class HomePage extends TestBase {
 	public SalesTypesPage clickOnSalesTypesPage(){
 		salesTypesLink.click();
 		return new SalesTypesPage();
+	}
+	
+	public SalesPersonsPage clickOnSalesPersonsPage(){
+		salesPersonsLink.click();
+		return new SalesPersonsPage();
 	}
 }
