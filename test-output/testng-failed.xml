@@ -5,9 +5,9 @@
     <classes>
       <class name="com.test.testcases.SalesPersonsPageTest">
         <methods>
+          <include name="verifySalesPersonsTittle"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="backBtnTest"/>
         </methods>
       </class> <!-- com.test.testcases.SalesPersonsPageTest -->
     </classes>

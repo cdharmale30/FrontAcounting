@@ -10,6 +10,7 @@ import com.test.pages.HomePage;
 import com.test.pages.LoginPage;
 import com.test.pages.ManufacturingPage;
 import com.test.pages.PurchasePage;
+import com.test.pages.SalesQuotationEntryPage;
 import com.test.pages.SalesTypesPage;
 import com.test.pages.TestAndInventoryPage;
 import com.test.testbase.TestBase;
@@ -20,11 +21,12 @@ public class HomePageTest extends TestBase {
 	HomePage homePage;
 	TestUtils testUtil;
 	PurchasePage purchasePage;
-	TestAndInventoryPage  testAndInventoryPage;
-	ManufacturingPage    manufacturingPage  ;  
+	TestAndInventoryPage testAndInventoryPage;
+	ManufacturingPage manufacturingPage;
 	FixedAssetLinkPage fixedAssetLinkPage;
 	SalesTypesPage salesTypePage;
-	
+	SalesQuotationEntryPage salesQuotationEntryPage;
+
 	public HomePageTest() {
 		super();
 	}
@@ -54,26 +56,29 @@ public class HomePageTest extends TestBase {
 
 		purchasePage = homePage.clickOnPurchasesLink();
 	}
-	
-	@Test(priority=3)
-	public void verifytestAndInventoryTest(){
-		
+
+	@Test(priority = 3)
+	public void verifytestAndInventoryTest() {
+
 		testAndInventoryPage = homePage.clickOnTestAndInventoryLink();
-	
-	}
-	
-	@Test(priority=4)
-	public void verifyManufacturingLinkTest(){
-		
-		manufacturingPage = homePage.clickOnManufacturingPageLink();
-	}
-	
-	@Test(priority=5)
-	public void verifyFixedAssetLinkLinkTest() {
-		fixedAssetLinkPage=homePage.clickOnFixedAssetLinkLink();
+
 	}
 
-	
+	@Test(priority = 4)
+	public void verifyManufacturingLinkTest() {
+
+		manufacturingPage = homePage.clickOnManufacturingPageLink();
+	}
+
+	@Test(priority = 5)
+	public void verifyFixedAssetLinkLinkTest() {
+		fixedAssetLinkPage = homePage.clickOnFixedAssetLinkLink();
+	}
+
+	@Test(priority = 6)
+	public void clickOnSalesQuotationEntryPage() {
+		salesQuotationEntryPage = homePage.clickOnSalesQuotationEntryPage();
+	}
 
 	@AfterMethod
 	public void tearDown() throws InterruptedException {

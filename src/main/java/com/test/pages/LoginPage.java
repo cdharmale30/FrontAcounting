@@ -27,6 +27,10 @@ public class LoginPage extends TestBase {
 
 	@FindBy(xpath = "//input[@type='submit']")
 	WebElement btn_submit;
+	
+	@FindBy(xpath = "company_login_name")
+	WebElement dropDown_project;
+	
 
 	By incorrectPassword = By.xpath("//body//center//font//b[contains(text(),'Incorrect Password')]");
 
@@ -44,14 +48,13 @@ public class LoginPage extends TestBase {
 	}
 
 	public String loginDropDown() {
-		Select project = new Select(driver.findElement(By.name("company_login_name")));
+		Select project = new Select(dropDown_project);
 		
 		project.selectByVisibleText("FrontAccounting");
 		return driver.getTitle();
 	}
 
 	public HomePage loginPageData(String uname, String passw) {
-
 		et_username.sendKeys(uname);
 		et_password.sendKeys(passw);
 		btn_submit.click();

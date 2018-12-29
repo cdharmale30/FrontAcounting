@@ -5,7 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -15,6 +17,13 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class TestUtils {
 	public static long PAGE_LOAD_TIMEOUT = 77;
@@ -24,7 +33,9 @@ public class TestUtils {
 
 	static Workbook book;
 	static Sheet sheet;
-	static WebDriver driver;
+	
+	public static ExtentReports extents;
+	public static ExtentTest extentTest;
 
 	// ---------------Xl Sheet read--------------------
 	public static Object[][] getTestData(String sheetName) {
@@ -56,12 +67,11 @@ public class TestUtils {
 
 	// ---------------Xl Sheet read--------------------
 
-	// --------------Screen shot Code--------------------
-	public  void failed() throws IOException {
-		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		 FileUtils.copyFile(screenshotFile, new File("I:\\All eclipse Code7\\FrontAccounting\\screenshot\\"+"failed_"+this.getClass().getName()+"_"+".jpg"));
-	}
+	// -------------Xl Sheet read Praveen Code---------------------
 	
-	// --------------Screen shot Code--------------------
+	// --------------Xl Sheet read Praveen Code--------------------
+
+	// ---------------screenshot code-------------------------
+
 
 }

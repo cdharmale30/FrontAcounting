@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.test.testutils.DropDownHelper;
 import com.test.testutils.TestUtils;
 
 public class TestBase {
@@ -22,9 +23,11 @@ public class TestBase {
 
 	public static Workbook book;
 	public static Sheet sheet;
+	
+	public DropDownHelper dropDownHelper;
 
 	public TestBase() {
-
+		
 		prop = new Properties();
 		FileInputStream fis;
 		try {
@@ -60,5 +63,7 @@ public class TestBase {
 
 		driver.get(prop.getProperty("url"));
 	}
+	
+	////
 
 }

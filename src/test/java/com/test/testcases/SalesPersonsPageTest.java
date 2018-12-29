@@ -45,8 +45,7 @@ public class SalesPersonsPageTest extends TestBase {
 	@Test(priority = 1)
 	public void verifySalesPersonsTittle() {
 		String salesPersonsPageText = salesPersonsPage.checkSalesPersonsPage();
-		Assert.assertEquals(salesPersonsPageText, "Sales Persons");
-
+		Assert.assertEquals(salesPersonsPageText, "Sals Persons");
 	}
 
 	@DataProvider(name = "salesPersonData")
