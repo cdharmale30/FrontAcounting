@@ -7,13 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.test.pages.HomePage;
 import com.test.pages.LoginPage;
 import com.test.testbase.TestBase;
+import com.test.testutils.CustomListener;
 import com.test.testutils.TestUtils;
-
+@Listeners(CustomListener.class)
 public class LoginPageTest extends TestBase {
 
 	LoginPage loginPage;

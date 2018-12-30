@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FrontAccounting]">
+  <listeners>
+    <listener class-name="com.test.extentreport.ExtentReportTestNG"/>
+    <listener class-name="com.test.testutils.CustomListener"/>
+  </listeners>
+  <test thread-count="5" name="Front Accounting TestCases(failed)">
     <classes>
       <class name="com.test.testcases.SalesPersonsPageTest">
         <methods>
@@ -10,6 +14,13 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.test.testcases.SalesPersonsPageTest -->
+      <class name="com.test.testcases.SalesTypesPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifySalesTypesTittle"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.test.testcases.SalesTypesPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Front Accounting TestCases(failed) -->
+</suite> <!-- Failed suite [FrontAccounting] -->

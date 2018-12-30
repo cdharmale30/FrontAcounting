@@ -1,19 +1,25 @@
 package com.test.testbase;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.test.testutils.DropDownHelper;
 import com.test.testutils.TestUtils;
+import com.test.testutils.WebEventListener;
 
 public class TestBase {
 
@@ -23,11 +29,12 @@ public class TestBase {
 
 	public static Workbook book;
 	public static Sheet sheet;
-	
+	public static EventFiringWebDriver e_driver;
+	public static WebEventListener eventListener;
 	public DropDownHelper dropDownHelper;
 
 	public TestBase() {
-		
+
 		prop = new Properties();
 		FileInputStream fis;
 		try {
@@ -42,20 +49,28 @@ public class TestBase {
 	}
 
 	public static void initialization() {
-		System.setProperty("webdriver.chrome.driver", "I:\\All eclipse Code7\\FrontAccounting\\EXE_Files\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",
+				"I:\\All eclipse Code7\\FrontAccounting\\EXE_Files\\chromedriver.exe");
 		driver = new ChromeDriver();
-		/*String browsername = properti.getProperty("browser");
+		/*
+		 * String browsername = properti.getProperty("browser");
+		 * 
+		 * if (browsername.equalsIgnoreCase("Firefox")) { driver = new FirefoxDriver();
+		 * 
+		 * } else if (browsername.equalsIgnoreCase("Chrome")) {
+		 * System.setProperty("webdriver.chrome.driver",
+		 * "I:\\All eclipse Code7\\FrontAccounting\\EXE_Files\\chromedriver.exe");
+		 * driver = new ChromeDriver();
+		 * 
+		 * }
+		 */
+		e_driver = new EventFiringWebDriver(driver);
+		// Now create object of EventListerHandler to register it with
+		// EventFiringWebDriver
+		eventListener = new WebEventListener();
+		e_driver.register(eventListener);
+		driver = e_driver;
 
-		if (browsername.equalsIgnoreCase("Firefox")) {
-			driver = new FirefoxDriver();
-
-		} else if (browsername.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "I:\\All eclipse Code7\\FrontAccounting\\EXE_Files\\chromedriver.exe");
-			driver = new ChromeDriver();
-
-		}
-*/
-		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtils.IMPLICITLY_WAIT_TIMEOUT, TimeUnit.SECONDS);
@@ -64,6 +79,14 @@ public class TestBase {
 		driver.get(prop.getProperty("url"));
 	}
 	
-	////
+	// --------------for screenshot-------------------
+	public  void failed(String methodName) throws IOException{
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String currentDir = System.getProperty("user.dir");
+		FileUtils.copyFile(scrFile, new File("I:\\All eclipse Code7\\FrontAccounting\\screenshot\\"+methodName+"_"+".jpg"));
+	}
+
+		// --------------for screenshot-------------------------
+
 
 }

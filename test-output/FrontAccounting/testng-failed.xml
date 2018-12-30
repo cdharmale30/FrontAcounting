@@ -3,9 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [FrontAccounting]">
   <listeners>
     <listener class-name="com.test.extentreport.ExtentReportTestNG"/>
+    <listener class-name="com.test.testutils.CustomListener"/>
   </listeners>
   <test thread-count="5" name="Front Accounting TestCases(failed)">
     <classes>
+      <class name="com.test.testcases.SalesPersonsPageTest">
+        <methods>
+          <include name="verifySalesPersonsTittle"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.test.testcases.SalesPersonsPageTest -->
       <class name="com.test.testcases.SalesTypesPageTest">
         <methods>
           <include name="tearDown"/>

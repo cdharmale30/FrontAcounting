@@ -51,7 +51,7 @@ public class SalesTypesPageTest extends TestBase {
 	@Test(priority = 1)
 	public void verifySalesTypesTittle() {
 		String salesTypesPageText = salesTypesPage.checkSalesTypePageTitle();
-		Assert.assertEquals(salesTypesPageText, "Sales Types");
+		Assert.assertEquals(salesTypesPageText, "Sales ypes");
 
 	}
 

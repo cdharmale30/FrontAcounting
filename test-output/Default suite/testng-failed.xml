@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.testcases.SalesPersonsPageTest">
+      <class name="com.test.testcases.SalesTypesPageTest">
         <methods>
-          <include name="verifySalesPersonsTittle"/>
-          <include name="setUp"/>
+          <include name="btn_delete_SalesType"/>
           <include name="tearDown"/>
+          <include name="salesTypesPageData" invocation-numbers="1 2 3"/>
+          <include name="verifySalesTypesTittle"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.test.testcases.SalesPersonsPageTest -->
+      </class> <!-- com.test.testcases.SalesTypesPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

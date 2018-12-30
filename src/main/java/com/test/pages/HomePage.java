@@ -32,6 +32,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//a[@href='./sales/sales_order_entry.php?NewQuotation=Yes']")
 	WebElement sales_Quotation_Entry;
 	
+	
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -79,5 +80,7 @@ public class HomePage extends TestBase {
 		sales_Quotation_Entry.click();
 		return new SalesQuotationEntryPage();
 	}
+	
+	
 	
 }
