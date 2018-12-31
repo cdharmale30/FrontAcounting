@@ -7,7 +7,7 @@
         <methods>
           <include name="btn_delete_SalesType"/>
           <include name="tearDown"/>
-          <include name="salesTypesPageData" invocation-numbers="1 2 3"/>
+          <include name="salesTypesPageData" invocation-numbers="0 2 3"/>
           <include name="verifySalesTypesTittle"/>
           <include name="setUp"/>
         </methods>

@@ -15,7 +15,6 @@ import com.test.pages.LoginPage;
 import com.test.testbase.TestBase;
 import com.test.testutils.CustomListener;
 import com.test.testutils.TestUtils;
-@Listeners(CustomListener.class)
 public class LoginPageTest extends TestBase {
 
 	LoginPage loginPage;
