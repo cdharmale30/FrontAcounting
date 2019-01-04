@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.test.testcases.HomePageTest">
+        <methods>
+          <include name="verifytestAndInventoryTest"/>
+          <include name="clickOnSalesQuotationEntryPage"/>
+          <include name="tearDown"/>
+          <include name="verifyFixedAssetLinkLinkTest"/>
+          <include name="setUp"/>
+          <include name="verifyManufacturingLinkTest"/>
+        </methods>
+      </class> <!-- com.test.testcases.HomePageTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -8,6 +8,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.openqa.selenium.OutputType;
@@ -22,6 +24,7 @@ import com.test.testutils.TestUtils;
 import com.test.testutils.WebEventListener;
 
 public class TestBase {
+	public static final Logger logger = Logger.getLogger(TestBase.class.getName());
 
 	public static WebDriver driver;
 	public static Properties prop;
@@ -37,10 +40,13 @@ public class TestBase {
 
 		prop = new Properties();
 		FileInputStream fis;
+		String log4jConfPath = "log4j.properties";
+		PropertyConfigurator.configure(log4jConfPath);
 		try {
 			fis = new FileInputStream(
 					("I:\\All eclipse Code7\\FrontAccounting\\src\\main\\java\\com\\test\\config\\config.properties"));
 			prop.load(fis);
+			logger.info("loading config.properties");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -78,15 +84,15 @@ public class TestBase {
 
 		driver.get(prop.getProperty("url"));
 	}
-	
+
 	// --------------for screenshot-------------------
-	public  void failed(String methodName) throws IOException{
+	public void failed(String methodName) throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		FileUtils.copyFile(scrFile, new File("I:\\All eclipse Code7\\FrontAccounting\\screenshot\\"+methodName+"_"+".jpg"));
+		FileUtils.copyFile(scrFile,
+				new File("I:\\All eclipse Code7\\FrontAccounting\\screenshot\\" + methodName + "_" + ".jpg"));
 	}
 
-		// --------------for screenshot-------------------------
-
+	// --------------for screenshot-------------------------
 
 }

@@ -35,6 +35,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/Selenium website jar files/Selenium lib/selenium-server-standalone-2.52.0.jar" sourcepath="F:/Selenium website jar files/Selenium lib/selenium-java-2.46.0-srcs.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

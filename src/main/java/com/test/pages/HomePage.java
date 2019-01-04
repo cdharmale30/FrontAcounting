@@ -1,12 +1,16 @@
 package com.test.pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.test.testbase.TestBase;
+import com.test.testutils.ScrollPage;
 
 public class HomePage extends TestBase {
+
+
 
 	@FindBy(xpath = "//a[contains(text(),'urchases')]")
 	WebElement purchasesLink;
@@ -31,8 +35,7 @@ public class HomePage extends TestBase {
 	//
 	@FindBy(xpath = "//a[@href='./sales/sales_order_entry.php?NewQuotation=Yes']")
 	WebElement sales_Quotation_Entry;
-	
-	
+
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -43,7 +46,9 @@ public class HomePage extends TestBase {
 
 	public PurchasePage clickOnPurchasesLink() {
 		purchasesLink.click();
+		ScrollPage.scrollingToBottomofPage();
 		return new PurchasePage();
+
 	}
 
 	public TestAndInventoryPage clickOnTestAndInventoryLink() {
@@ -75,12 +80,9 @@ public class HomePage extends TestBase {
 		customersLink.click();
 		return new CustomersPage();
 	}
-	
+
 	public SalesQuotationEntryPage clickOnSalesQuotationEntryPage() {
 		sales_Quotation_Entry.click();
 		return new SalesQuotationEntryPage();
 	}
-	
-	
-	
 }

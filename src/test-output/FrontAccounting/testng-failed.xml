@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FrontAccounting]" parallel="none">
+  <listeners>
+    <listener class-name="com.test.extentreport.ExtentReportTestNG"/>
+    <listener class-name="com.test.testutils.CustomListener"/>
+  </listeners>
+  <test name="Front Accounting TestCases(failed)" parallel="none">
+    <classes>
+      <class name="com.test.testcases.LoginPageTest">
+        <methods>
+          <include name="frontAccountinglogotest"/>
+          <include name="loginTitleTest"/>
+          <include name="dropDownTest"/>
+          <include name="setup"/>
+          <include name="loginPageDataTest"/>
+        </methods>
+      </class> <!-- com.test.testcases.LoginPageTest -->
+    </classes>
+  </test> <!-- Front Accounting TestCases(failed) -->
+</suite> <!-- Failed suite [FrontAccounting] -->

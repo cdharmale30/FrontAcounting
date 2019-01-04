@@ -1,5 +1,6 @@
 package com.test.testcases;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +18,7 @@ import com.test.testbase.TestBase;
 import com.test.testutils.TestUtils;
 
 public class HomePageTest extends TestBase {
+	public static final Logger logger = Logger.getLogger(HomePageTest.class.getName());
 	LoginPage loginPage;
 	HomePage homePage;
 	TestUtils testUtil;
@@ -29,6 +31,8 @@ public class HomePageTest extends TestBase {
 
 	public HomePageTest() {
 		super();
+	
+
 	}
 
 	@BeforeMethod
@@ -49,36 +53,42 @@ public class HomePageTest extends TestBase {
 	public void verifyHomePageTitleTest() {
 		String homePageTitle = homePage.verifyHomePageTitle();
 		Assert.assertEquals(homePageTitle, "Main Menu", "Home page title not matched");
+		logger.info("Verify The Tittle of Page");
 	}
 
 	@Test(priority = 2)
 	public void verifyPurchaseLinkTest() {
 
 		purchasePage = homePage.clickOnPurchasesLink();
+		logger.info("click on Purchase Page");
+		
 	}
 
 	@Test(priority = 3)
 	public void verifytestAndInventoryTest() {
-
 		testAndInventoryPage = homePage.clickOnTestAndInventoryLink();
-
+		logger.info("click on testAndInventoryPage Page");
 	}
 
 	@Test(priority = 4)
 	public void verifyManufacturingLinkTest() {
 
 		manufacturingPage = homePage.clickOnManufacturingPageLink();
+		logger.info("click on Manufacturing Page");
 	}
 
 	@Test(priority = 5)
 	public void verifyFixedAssetLinkLinkTest() {
 		fixedAssetLinkPage = homePage.clickOnFixedAssetLinkLink();
+		logger.info("click on FixedAssetLink Page");
 	}
 
 	@Test(priority = 6)
 	public void clickOnSalesQuotationEntryPage() {
 		salesQuotationEntryPage = homePage.clickOnSalesQuotationEntryPage();
 	}
+
+	// BrokenLinks
 
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
